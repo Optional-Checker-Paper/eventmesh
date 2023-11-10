@@ -17,8 +17,6 @@
 
 import java.util.concurrent.TimeUnit
 
-
-
 buildscript {
     repositories {
         mavenLocal()
@@ -39,6 +37,12 @@ buildscript {
     }
 }
 
+plugins {
+    // Checker Framework pluggable type-checking
+    id 'org.checkerframework' version '0.6.35'
+}
+
+
 //Remove doclint warnings that pollute javadoc logs when building with java8
 if(JavaVersion.current().isJava8()){
     allprojects {
@@ -47,6 +51,7 @@ if(JavaVersion.current().isJava8()){
         }
     }
 }
+
 
 allprojects {
     apply plugin: 'java'
@@ -61,6 +66,7 @@ allprojects {
     apply plugin: "java-library"
     apply plugin: 'signing'
     apply plugin: 'checkstyle'
+    apply plugin: 'org.checkerframework'
 
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
@@ -75,6 +81,15 @@ allprojects {
         delete 'build'
         delete 'dist'
         delete 'out'
+    }
+
+    checkerFramework {
+      checkers = [
+        'org.checkerframework.checker.optional.OptionalChecker',
+      ]
+      extraJavacArgs = [
+        '-AsuppressWarnings=type.anno.before.modifier,type.anno.before.decl.anno'
+      ]
     }
 
     checkstyle {
