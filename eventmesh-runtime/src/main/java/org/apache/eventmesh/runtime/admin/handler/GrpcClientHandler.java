@@ -149,6 +149,7 @@ public class GrpcClientHandler extends AbstractHttpHandler {
      * @param httpExchange the exchange containing the request from the client and used to send the response
      * @throws IOException if an I/O error occurs while handling the request
      */
+    @SuppressWarnings("optional:introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
     void list(HttpExchange httpExchange) throws IOException {
         OutputStream out = httpExchange.getResponseBody();
         // Set the response headers

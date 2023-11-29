@@ -100,6 +100,7 @@ public class KafkaSinkConnector implements Sink {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public void put(List<ConnectRecord> sinkRecords) {
         try {
             for (ConnectRecord connectRecord : sinkRecords) {
@@ -117,6 +118,7 @@ public class KafkaSinkConnector implements Sink {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public ProducerRecord convertRecordToMessage(ConnectRecord connectRecord) {
         List<Header> headers = new ArrayList<>();
         for (String key : connectRecord.getExtensions().keySet()) {

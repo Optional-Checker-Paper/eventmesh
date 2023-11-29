@@ -44,6 +44,7 @@ public interface ConvertValue<T> {
     /**
      * @return The value converter needs
      */
+    @SuppressWarnings("optional:introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
     default Object processFieldValue(ConvertInfo convertInfo, String key, ConfigFiled configFiled) {
         Properties properties = convertInfo.getProperties();
         String value = properties.getProperty(key);

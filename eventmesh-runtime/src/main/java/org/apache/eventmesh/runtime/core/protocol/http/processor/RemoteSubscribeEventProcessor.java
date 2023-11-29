@@ -68,6 +68,7 @@ public class RemoteSubscribeEventProcessor extends AbstractEventProcessor {
     }
 
     @Override
+    @SuppressWarnings("optional:introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
     public void handler(HandlerService.HandlerSpecific handlerSpecific, HttpRequest httpRequest) throws Exception {
 
         AsyncContext<HttpEventWrapper> asyncContext = handlerSpecific.getAsyncContext();

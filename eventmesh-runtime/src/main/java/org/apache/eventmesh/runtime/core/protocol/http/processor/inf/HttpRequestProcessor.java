@@ -48,6 +48,7 @@ public interface HttpRequestProcessor {
         return false;
     }
 
+    @SuppressWarnings("unchecked")
     default <T extends Header, E extends Body> void completeResponse(HttpCommand req, AsyncContext asyncContext,
                                                                       T respHeader, EventMeshRetCode emCode,
                                                                       String msg, Class<E> clazz) {

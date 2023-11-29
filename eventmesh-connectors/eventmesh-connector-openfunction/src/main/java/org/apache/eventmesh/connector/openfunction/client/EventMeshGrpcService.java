@@ -55,6 +55,7 @@ public final class EventMeshGrpcService {
                 "ventBA\n)org.apache.eventmesh.connect.ope" +
                 "nfunctionB\024EventMeshGrpcServiceb\006proto3"
         };
+        @SuppressWarnings("deprecation")
         com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
             new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
                 public com.google.protobuf.ExtensionRegistry assignDescriptors(

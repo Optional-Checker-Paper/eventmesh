@@ -52,6 +52,7 @@ public class AdminWebHookConfigOperationManager {
         return webHookConfigOperation;
     }
 
+    @SuppressWarnings("deprecation")
     public void init() throws InvocationTargetException, InstantiationException, IllegalAccessException,
         NoSuchMethodException {
 

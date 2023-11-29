@@ -37,7 +37,7 @@ public class MapConverter implements ConvertValue<Map<String, Object>> {
         return true;
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({"unchecked", "deprecation"})
     @Override
     public Map<String, Object> convert(ConvertInfo convertInfo) {
         try {

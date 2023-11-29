@@ -44,6 +44,7 @@ public class ConfigMonitorService {
         configInfoList.add(configInfo);
     }
 
+    @SuppressWarnings("deprecation")
     public void load() {
         for (ConfigInfo configInfo : configInfoList) {
             try {

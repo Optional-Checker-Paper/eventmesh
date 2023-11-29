@@ -97,6 +97,7 @@ public class PulsarSinkConnector implements Sink {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public void put(List<ConnectRecord> sinkRecords) {
         for (ConnectRecord connectRecord : sinkRecords) {
             try {

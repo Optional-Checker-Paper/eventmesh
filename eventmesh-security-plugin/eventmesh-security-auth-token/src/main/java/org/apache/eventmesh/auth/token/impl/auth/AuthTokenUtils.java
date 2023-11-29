@@ -137,6 +137,7 @@ public class AuthTokenUtils {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public static boolean authAccess(AclProperties aclProperties) {
 
         String topic = aclProperties.getTopic();

@@ -242,6 +242,7 @@ public class EventMeshConsumer {
         }
     }
 
+    @SuppressWarnings("optional:introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
     private EventListener createEventListener(final SubscriptionMode subscriptionMode) {
         return (event, context) -> {
             event = CloudEventBuilder.from(event)

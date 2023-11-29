@@ -129,6 +129,7 @@ public class S3SourceConnector implements Source {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public List<ConnectRecord> poll() {
         if (this.position >= this.fileSize) {
             return Collections.EMPTY_LIST;

@@ -43,6 +43,7 @@ public class PrometheusExporterUtils {
      * @param getMetric
      */
     @SneakyThrows
+    @SuppressWarnings("unchecked")
     public static void observeOfValue(Meter meter, String metricName, String metricDesc, String protocol,
         Metric summaryMetrics, Function getMetric) {
         Method method = getMetric.getClass().getMethod("apply", Object.class);

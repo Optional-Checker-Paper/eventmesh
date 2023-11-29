@@ -103,6 +103,7 @@ public class PulsarSourceConnector implements Source {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public List<ConnectRecord> poll() {
         List<ConnectRecord> connectRecords = new ArrayList<>();
         try {

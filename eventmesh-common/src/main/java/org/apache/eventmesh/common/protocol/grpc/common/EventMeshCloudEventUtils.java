@@ -272,6 +272,7 @@ public abstract class EventMeshCloudEventUtils {
         return getDataContent(cloudEvent, null);
     }
 
+    @SuppressWarnings("optional:introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
     public static String getDataContent(final CloudEvent cloudEvent, String defaultValue) {
         String dataContentType = getDataContentType(cloudEvent);
         if (ProtoSupport.isTextContent(dataContentType)) {
@@ -288,6 +289,7 @@ public abstract class EventMeshCloudEventUtils {
 
     }
 
+    @SuppressWarnings("optional:introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
     public static Map<String, String> getAttributes(final CloudEvent cloudEvent) {
         if (Objects.isNull(cloudEvent)) {
             return new HashMap<>(0);

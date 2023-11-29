@@ -244,6 +244,7 @@ public abstract class AbstractEventProcessor implements AsyncHttpProcessor {
      * @return string
      * @throws IOException
      */
+    @SuppressWarnings("optional:introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
     public static String post(CloseableHttpClient client, String uri,
         Map<String, String> requestHeader, Map<String, Object> requestBody,
         ResponseHandler<String> responseHandler) throws IOException {

@@ -65,6 +65,7 @@ public class EventMeshHttpConsumer extends AbstractHttpClient implements AutoClo
         this(eventMeshHttpClientConfig, null);
     }
 
+    @SuppressWarnings("optional:introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
     public EventMeshHttpConsumer(final EventMeshHttpClientConfig eventMeshHttpClientConfig,
         final ThreadPoolExecutor customExecutor)
         throws EventMeshException {

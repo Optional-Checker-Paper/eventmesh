@@ -63,6 +63,7 @@ public class ObjectConverter implements ConvertValue<Object> {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public Object convert(ConvertInfo convertInfo) {
         try {
             this.convertInfo = convertInfo;
@@ -97,6 +98,7 @@ public class ObjectConverter implements ConvertValue<Object> {
         }
     }
 
+    @SuppressWarnings("deprecation")
     private void setValue() throws Exception {
         boolean needReload = Boolean.FALSE;
 
@@ -141,6 +143,7 @@ public class ObjectConverter implements ConvertValue<Object> {
         reloadConfigIfNeed(needReload);
     }
 
+    @SuppressWarnings("deprecation")
     private void reloadConfigIfNeed(boolean needReload) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         if (needReload) {
             Method method = this.clazz.getDeclaredMethod(this.reloadMethodName == null ? "reload" : this.reloadMethodName);

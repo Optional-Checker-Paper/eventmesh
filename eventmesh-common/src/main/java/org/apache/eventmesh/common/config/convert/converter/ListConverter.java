@@ -50,7 +50,7 @@ public class ListConverter implements ConvertValue<List<Object>> {
         return convert(convertInfo, this.getSeparator());
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({"unchecked", "deprecation"})
     public List<Object> convert(ConvertInfo convertInfo, String separator) {
         try {
             if (convertInfo.getValue() == null) {

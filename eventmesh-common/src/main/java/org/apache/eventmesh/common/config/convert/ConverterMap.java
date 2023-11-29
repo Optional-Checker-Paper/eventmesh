@@ -95,6 +95,7 @@ public class ConverterMap {
      * @param field The field to be parsed
      * @return the converter for the field
      */
+    @SuppressWarnings("deprecation")
     public static ConvertValue<?> getFieldConverter(Field field) {
         Class<?> clazz = field.getType();
         ConfigFiled configFiled = field.getAnnotation(ConfigFiled.class);

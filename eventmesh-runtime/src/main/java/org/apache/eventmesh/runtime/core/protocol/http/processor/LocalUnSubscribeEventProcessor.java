@@ -67,6 +67,7 @@ public class LocalUnSubscribeEventProcessor extends AbstractEventProcessor {
     }
 
     @Override
+    @SuppressWarnings("optional:introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
     public void handler(final HandlerService.HandlerSpecific handlerSpecific, final HttpRequest httpRequest) throws Exception {
 
         final AsyncContext<HttpEventWrapper> asyncContext = handlerSpecific.getAsyncContext();
