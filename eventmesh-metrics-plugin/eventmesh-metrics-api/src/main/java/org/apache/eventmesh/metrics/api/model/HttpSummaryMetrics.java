@@ -433,7 +433,7 @@ public class HttpSummaryMetrics implements Metric {
     }
 
 
-    @SuppressWarnings("optional:method.invocation") // checker-issue : get() on non-empty stream result
+    @SuppressWarnings("optional:method.invocation") // non-empty-stream-optional: get() on non-empty stream result
     private float avg(LinkedList<Integer> linkedList) {
         if (linkedList.isEmpty()) {
             return 0.0f;

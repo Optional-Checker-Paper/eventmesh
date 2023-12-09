@@ -44,10 +44,10 @@ plugins {
 
 
 //Remove doclint warnings that pollute javadoc logs when building with java8
-if(JavaVersion.current().isJava8()){
+if(JavaVersion.current().isJava8() || JavaVersion.current().isJava8Compatible()){
     allprojects {
         tasks.withType(Javadoc){
-            options.addStringOption('xdoclint:none','-quiet')
+            options.addStringOption('Xdoclint:none','-quiet')
         }
     }
 }
@@ -88,8 +88,12 @@ allprojects {
         'org.checkerframework.checker.optional.OptionalChecker',
       ]
       extraJavacArgs = [
-        '-AsuppressWarnings=type.anno.before.modifier,type.anno.before.decl.anno'
+        '-AsuppressWarnings=type.anno.before.modifier,type.anno.before.decl.anno',
+        '-AwarnUnneededSuppressions',
+        '-AassumePure',
+        '-AassumeAssertionsAreEnabled'
       ]
+      excludeTests = true
     }
 
     checkstyle {

@@ -132,7 +132,7 @@ public class ConsumerImpl {
         }
     }
 
-    @SuppressWarnings("optional:method.invocation") // checker-issue : map over non-empty list, with a non-null mapping function.
+    @SuppressWarnings("optional:method.invocation") // non-empty-stream-optional: map over non-empty list, with a non-null mapping function.
     public void updateOffset(List<CloudEvent> cloudEvents, AbstractContext context) {
         Long maxOffset = cloudEvents.stream().map(cloudEvent -> this.kafkaConsumerRunner.getOffset(cloudEvent)).max(Long::compare).get();
         cloudEvents.forEach(cloudEvent -> this.updateOffset(cloudEvent.getSubject(), maxOffset));
